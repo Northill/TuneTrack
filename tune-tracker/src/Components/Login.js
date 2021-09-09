@@ -12,10 +12,24 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
+// Firebase Components:
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+
 class Login extends Component {
     constructor(props) {
         super (props);
         
+        this.state = {
+            email: '',
+            password: ''
+        }
+
+        // Bind the submit button to access state:
+        this.submitButton = this.submitButton.bind(this);
+    }
+
+    submitButton() {
+        this.props.action('submit');
     }
 
     render() {
@@ -32,7 +46,7 @@ class Login extends Component {
                         <Col></Col>
                     </Row>
                     <LoginForm />
-                    <Button id='loginButton'>Login</Button>
+                    <Button id='loginButton' onClick={this.submitButton}>Login</Button>
                 </Card>
                 </div>
             </>
@@ -40,8 +54,6 @@ class Login extends Component {
     }
 }
 
-// We need:
-// Login Method selection Part:
 const OAuthLoginMethods = () => {
     return (
         <Row align='center'>
@@ -54,23 +66,28 @@ const OAuthLoginMethods = () => {
     )
 }
 
-const LoginForm = () => {
-    return (
+class LoginForm extends Component {
+    constructor (props) {
+        super (props)
+
+    }
+
+    render() {
+        return (
         <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Control className='tFormText' type="email" placeholder="Enter email" />
+                <Form.Control className='tFormText' type="email" placeholder="Enter email" onChange={e => this.setState({ email: e.target.value })}/>
                 <Form.Text className="text-muted">
                 We'll never share your email with anyone else.
                 </Form.Text>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Control className='tFormText' type="password" placeholder="Password" />
+                <Form.Control className='tFormText' type="password" placeholder="Password" onChange={e => this.setState({ password: e.target.value })}/>
             </Form.Group>
         </Form>
-    )
+        )
+    }
 }
-// Text box for login or sign up:
-// Buttons for email login:
 
 export default Login;

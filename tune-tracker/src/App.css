@@ -9,6 +9,9 @@ body {
 }
 
 .tCard {
+
+  margin-top: 20%;
+
   display: flex;
 
   transition-duration: 0.3s;
@@ -66,5 +69,26 @@ body {
 }
 
 #loginButton:hover {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+.Song {
+  margin-bottom: 5px;
+}
+
+.SongCover {
+
+  transition-duration: 0.3s;
+  transition-property: box-shadow;
+
+  width: 20em;
+  height: 20em;
+
+  box-shadow: 0 0 8px transparent;
+
+  margin-bottom: 5px;
+}
+
+.SongCover:hover {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
 }
