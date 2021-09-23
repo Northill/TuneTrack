@@ -7,6 +7,7 @@ import Col from 'react-bootstrap/Col';
 
 // Import my components:
 import Song from './Song';
+import Container from 'react-bootstrap/esm/Container';
 
 class Home extends Component {
     constructor (props) {
@@ -60,7 +61,18 @@ class Home extends Component {
 
         return (
             <>
-                <h1>Hello</h1>
+                <h1>Your Songs</h1>
+                <Container>
+                {
+                    this.albums.map((i) => {
+                        return <Row>{
+                                i.map((x) => {
+                                    return <Col><Song img={x.img} name={x.name}/></Col>
+                                })
+                            }</Row>
+                    })
+                }
+                </Container>
             </>
         )
     }
