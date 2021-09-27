@@ -8,6 +8,11 @@ import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card'; 
 import Button from 'react-bootstrap/Button';
 
+// My Components
+import TaskButton from './TaskButton';
+
+import ToDo from './Todo';
+
 // Song view
 import Song from './Song';
 
@@ -27,6 +32,7 @@ const SongView = () => {
     return (
         <>
             <Container>
+                <h1>Hello</h1>
                 <Row>
                     <Col>
                         <Song img={data.img} name={data.name}/>
@@ -35,18 +41,7 @@ const SongView = () => {
                         {
                             data.toDo.map((x) => {
                                 return (
-                                    <Card>
-                                        <Card.Body>
-                                            <Row>
-                                                <Col>
-                                                    <h3>{x.title}</h3>
-                                                </Col>
-                                                <Col>
-                                                    <h3>Complete</h3>
-                                                </Col>
-                                            </Row>
-                                        </Card.Body>
-                                    </Card>
+                                    <ToDo name={x.title} />
                                 )
                             })
                         }

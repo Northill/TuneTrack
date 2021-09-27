@@ -18,7 +18,11 @@ class Song extends Component {
             <div className='Song'>
                 <img className='SongCover' src={this.props.img} />
                 <h1>
-                    <Link to={{ pathname:'/song', state:[{name: 'tom'}]}}>{this.props.name}</Link>
+                    <Link to={
+                        { 
+                            pathname:'/song', 
+                        }  }>{this.props.name} 
+                        </Link>
                 </h1>
             </div>
         )
