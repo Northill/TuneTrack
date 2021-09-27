@@ -13,6 +13,7 @@ import Navbar from 'react-bootstrap/NavBar';
 import Login from './Components/Login';
 import Home from './Components/Home';
 import Switch from 'react-bootstrap/esm/Switch';
+import SongView from './Components/SongView'; 
 
 class App extends Component {
   constructor (props) {
@@ -62,6 +63,9 @@ class App extends Component {
           </Route>
           <Route path='/home'>
             <Home />
+          </Route>
+          <Route path='/song'>
+            <SongView />
           </Route>
         </Switch>
 
