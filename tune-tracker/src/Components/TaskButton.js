@@ -40,5 +40,33 @@ class TaskButton extends Component {
     }
 }
 
+class AddTaskButton extends Component {
+    constructor (props) {
+        super (props);
 
-export default TaskButton;
+        this.state = {
+            isComplete: false
+        }
+    }
+
+    render() {
+
+        let colorId;
+
+        if (this.state.isComplete == true) {
+            colorId = 'isComplete';
+        } else {
+            colorId = 'notComplete';
+        }
+
+        return (
+            <div className='TaskOuter' onClick={this.userClick}>
+                <img id='addButton' src='/add.png' />
+            </div>
+        )
+    }
+}
+
+
+
+export { TaskButton, AddTaskButton };

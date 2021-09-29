@@ -1,23 +1,19 @@
 // Import React:
 import React, { Component } from 'react';
 
-// React Bootstrap
+// React Bootstrap:
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container'; 
-import Card from 'react-bootstrap/Card'; 
-import Button from 'react-bootstrap/Button';
 
-// My Components
-import TaskButton from './TaskButton';
-
+// My Components:
 import ToDo from './Todo';
-
-// Song view
 import Song from './Song';
+import AddTask from './AddTask';
 
 const SongView = () => {
 
+    // Example of the data the will be received from the server:
     let data = {
         name: 'Rushing Back',
         img: '/rushingBack.jpg',
@@ -28,6 +24,13 @@ const SongView = () => {
             { title: 'Remove resonance in vocals', isComplete: false },
         ]
     }
+
+    // Then the front end will append to the array to display an add task:
+    let addTask =  {
+        title: 'add new task'
+    }
+
+    data.toDo.push(addTask);
     
     return (
         <>
@@ -41,10 +44,11 @@ const SongView = () => {
                         {
                             data.toDo.map((x) => {
                                 return (
-                                    <ToDo name={x.title} />
+                                    <ToDo name={x.title} task={true}/>
                                 )
                             })
                         }
+                        <AddTask />
                     </Col>
                 </Row>
             </Container>

@@ -151,3 +151,15 @@ body {
 #item2 {
  float: right;
 }
+
+#addButton {
+  margin: 0 auto;
+  height: 20px;
+  width: 20px;
+  border-radius: 6px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -10px 0 0 -10px;
+}
