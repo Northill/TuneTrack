@@ -4,6 +4,9 @@ import '../App.css';
 // React:
 import React, { Component } from 'react';
 
+// React Router:
+import { Link } from 'react-router-dom';
+
 // Bootstrap:
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -36,18 +39,18 @@ class Login extends Component {
         return (
             <>
                 <div className='tDiv'>
-                <Card className='tCard'>
-                    <Card.Title id='loginTitle' align='center'>Tune Track</Card.Title>
-                    <Row>
-                        <Col></Col>
-                        <Col>
-                            <img id='logo' src='/tuneLogo.svg' />
-                        </Col>
-                        <Col></Col>
-                    </Row>
-                    <LoginForm />
-                    <Button id='loginButton' onClick={this.submitButton}>Login</Button>
-                </Card>
+                    <Card className='tCard'>
+                        <Card.Title id='loginTitle' align='center'>Tune Track</Card.Title>
+                        <Row>
+                            <Col></Col>
+                            <Col>
+                                <img id='logo' src='/tuneLogo.svg' />
+                            </Col>
+                            <Col></Col>
+                        </Row>
+                        <LoginForm />
+                        <Link to='/home'><Button id='loginButton'>Submit</Button></Link>
+                    </Card>
                 </div>
             </>
         );
