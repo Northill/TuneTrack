@@ -18,7 +18,7 @@ class Song extends Component {
             <div className='Song'>
                 <img className='SongCover' src={this.props.img} />
                 <h1>
-                    <Link to={
+                    <Link  style={{ textDecoration: 'none', color: 'black' }} to={
                         { 
                             pathname:'/song', 
                         }  }>{this.props.name} 
