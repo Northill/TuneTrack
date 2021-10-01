@@ -1,16 +1,6 @@
-
-
 import {TaskButton} from "./TaskButton"
 
 const ToDo = (props) => {
-
-    let isTaskButton = () => {
-        if (props.task) {
-            return <TaskButton />
-        }
-        return <h1>Add</h1>
-    }
-
     return (
         <>
             <div className='ToDo'>
