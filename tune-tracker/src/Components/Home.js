@@ -61,8 +61,8 @@ class Home extends Component {
 
         return (
             <>
-                <h1>Your Songs</h1>
                 <Container>
+                <h1>Your Songs</h1>
                 {
                     this.albums.map((i) => {
                         return <Row>{

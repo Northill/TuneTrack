@@ -34,8 +34,7 @@ const SongView = () => {
     
     return (
         <>
-            <Container>
-                <h1>Hello</h1>
+            <Container style={{paddingTop: '20px' }}>
                 <Row>
                     <Col>
                         <Song img={data.img} name={data.name}/>
