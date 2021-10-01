@@ -49,7 +49,8 @@ class Login extends Component {
                             <Col></Col>
                         </Row>
                         <LoginForm />
-                        <Link to='/home'><Button id='loginButton'>Submit</Button></Link>
+                        <Link to='/home'><Button id='loginButton'>Login</Button></Link>
+                        <Button>Sign Up</Button>
                     </Card>
                 </div>
             </>
