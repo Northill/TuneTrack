@@ -15,12 +15,12 @@ class Song extends Component {
 
     render () {
         return (
-            <Link  style={{ textDecoration: 'none', color: 'black' }} to={
+            <Link className='Song' style={{ textDecoration: 'none', color: 'black' }} to={
                 { 
                     pathname:'/song', 
                 }  }>
-                <div className='Song'>
-                    <img className='SongCover' src={this.props.img} />
+                <div className='Songinner'>
+                    <img className='SongCover' src={this.props.img} />        
                     <h1>
                     {   this.props.name} 
                     </h1>
