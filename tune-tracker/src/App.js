@@ -16,46 +16,15 @@ import Switch from 'react-bootstrap/esm/Switch';
 import SongView from './Components/SongView'; 
 
 class App extends Component {
-  constructor (props) {
-    super (props);
-
-    this.state = {
-      View: 'login'
-    }
-
-    // Bind functions:
-    this.loginSubmit = this.loginSubmit.bind(this);
-
-  }
-
-  loginSubmit(arg) {
-    console.log(arg);
-
-    this.setState(state => ({
-      View: 'home'
-    }));
-  }
 
   render() {
-    console.log(this.state.View);
-
     //let ui;
-    let nav = <Navigation />;
-
-    // if (this.state.View == 'home') {
-    //   ui = <Home />
-    // } else if (this.state.View == 'login') {
-    //   ui = <Login action={this.loginSubmit}/>
-    // }
-
-    // if (this.state.View != 'login') {
-    //   nav = <Navigation />;
-    // }
+    let nav = <Navigation /> // Assign a variable to the navigation component.
 
     return (
       <Router>
         {
-          nav
+          nav // Implement the navigation component here.xs
         }
         <Switch>
           <Route exact path='/'>
@@ -68,23 +37,22 @@ class App extends Component {
             <SongView />
           </Route>
         </Switch>
-
       </Router>
     );
   }
 }
 
-const Navigation = () => {
+// Create navigation component.
+const Navigation = () => { 
   return (
     <Navbar bg="light" variant="light">
       <Container>
       <Navbar.Brand href="#home">
-        <Link to='/home'>Tune Track</Link>
+        <Link style={{ textDecoration: 'none', color: 'black'}} to='/home'>Tune Track</Link>
       </Navbar.Brand>
       <Nav className="me-auto">
-        <Nav.Link href="#home">Home</Nav.Link>
-        <Nav.Link href="#features">Features</Nav.Link>
-        <Nav.Link href="#pricing">Pricing</Nav.Link>
+        <Nav.Link href="#home">Account</Nav.Link>
+        <Nav.Link href="#home">About</Nav.Link>
       </Nav>
       </Container>
     </Navbar>

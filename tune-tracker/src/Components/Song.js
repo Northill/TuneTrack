@@ -15,16 +15,17 @@ class Song extends Component {
 
     render () {
         return (
-            <div className='Song'>
-                <img className='SongCover' src={this.props.img} />
-                <h1>
-                    <Link to={
-                        { 
-                            pathname:'/song', 
-                        }  }>{this.props.name} 
-                        </Link>
-                </h1>
-            </div>
+            <Link className='Song' style={{ textDecoration: 'none', color: 'black' }} to={
+                { 
+                    pathname:'/song', 
+                }  }>
+                <div className='Songinner'>
+                    <img className='SongCover' src={this.props.img} />        
+                    <h1>
+                    {   this.props.name} 
+                    </h1>
+                </div>
+            </Link>
         )
     }
 }
