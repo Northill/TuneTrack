@@ -170,3 +170,12 @@ body {
   left: 50%;
   margin: -10px 0 0 -10px;
 }
+
+.Input {
+  border-width: 0;
+  border-color: rgba(0, 0, 0, 0);
+}
+
+.Input:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 200, 200, 0);;
+}

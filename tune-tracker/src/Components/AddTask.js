@@ -22,7 +22,7 @@ class AddTask extends Component {
             <div className='ToDo'>
                 <ul id='taskList'> 
                     <li class='taskLi' id='item1'>
-                        <Form.Control size='sm' type='text' placeholder='Add Task' />
+                        <Form.Control className='Input' size='sm' type='text' placeholder='Add Task' />
                     </li>
                     <li class='taskLi' id='item2'>
                         <AddTaskButton />
