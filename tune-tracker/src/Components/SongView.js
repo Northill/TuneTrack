@@ -36,14 +36,14 @@ const SongView = () => {
         <>
             <Container style={{paddingTop: '20px' }}>
                 <Row>
-                    <Col>
+                    <Col xs={6} className='d-flex justify-content-center'>
                         <Song img={data.img} name={data.name}/>
                     </Col>
-                    <Col>
+                    <Col xs={6}>
                         {
                             data.toDo.map((x) => {
                                 return (
-                                    <ToDo name={x.title} task={true}/>
+                                    <ToDo name={x.title} task={true}/> 
                                 )
                             })
                         }
